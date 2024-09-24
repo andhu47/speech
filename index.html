@@ -2,20 +2,44 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Real-Time Speech Transcription</title>
+  <title>Real-Time Speech Transcription and Translation</title>
   <style>
     /* Basic styling */
     body { font-family: Arial, sans-serif; padding: 20px; }
-    #transcript { border: 1px solid #ccc; padding: 10px; width: 100%; height: 200px; overflow-y: auto; }
+    #transcript, #translation { border: 1px solid #ccc; padding: 10px; width: 100%; height: 150px; overflow-y: auto; }
     #start-btn, #stop-btn { padding: 10px 20px; margin: 5px; }
+    #language-select { padding: 5px; margin-left: 10px; }
+    label { font-weight: bold; }
+    .section { margin-bottom: 20px; }
   </style>
 </head>
 <body>
 
-  <h1>Real-Time Speech Transcription</h1>
-  <button id="start-btn">Start Transcription</button>
-  <button id="stop-btn" disabled>Stop Transcription</button>
-  <div id="transcript"></div>
+  <h1>Real-Time Speech Transcription and Translation</h1>
+
+  <div class="section">
+    <button id="start-btn">Start Transcription</button>
+    <button id="stop-btn" disabled>Stop Transcription</button>
+    <label for="language-select">Translate to:</label>
+    <select id="language-select">
+      <option value="es">Spanish</option>
+      <option value="fr">French</option>
+      <option value="de">German</option>
+      <option value="zh">Chinese</option>
+      <option value="hi">Hindi</option>
+      <!-- Add more languages as needed -->
+    </select>
+  </div>
+
+  <div class="section">
+    <label>Transcribed Text:</label>
+    <div id="transcript"></div>
+  </div>
+
+  <div class="section">
+    <label>Translated Text:</label>
+    <div id="translation"></div>
+  </div>
 
   <script src="script.js"></script>
 </body>
